@@ -7,13 +7,21 @@
   },
   "host": "localhost:8001",
   "basePath": "/",
-  "schemes": ["http"],
-  "consumes": ["application/json"],
-  "produces": ["application/json"],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "paths": {
     "/auth/logout": {
       "get": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "description": "",
         "parameters": [],
         "responses": {}
@@ -21,7 +29,9 @@
     },
     "/auth/register": {
       "post": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "description": "",
         "parameters": [
           {
@@ -38,6 +48,9 @@
                 },
                 "password": {
                   "example": "any"
+                },
+                "role": {
+                  "example": "any"
                 }
               }
             }
@@ -48,7 +61,9 @@
     },
     "/auth/login": {
       "post": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "description": "",
         "parameters": [
           {
@@ -72,7 +87,9 @@
     },
     "/auth/requestEmailToken": {
       "post": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "description": "",
         "parameters": [
           {
@@ -93,7 +110,9 @@
     },
     "/auth/verifyEmail": {
       "post": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "description": "",
         "parameters": [
           {
@@ -121,7 +140,9 @@
     },
     "/auth/forgotPassword": {
       "post": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "description": "",
         "parameters": [
           {
@@ -142,7 +163,9 @@
     },
     "/auth/resetPassword": {
       "put": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "description": "",
         "parameters": [
           {
@@ -169,7 +192,9 @@
     },
     "/auth/updatePassword": {
       "put": {
-        "tags": ["auth"],
+        "tags": [
+          "auth"
+        ],
         "description": "",
         "parameters": [
           {
@@ -201,6 +226,65 @@
             "description": "Internal Server Error"
           }
         }
+      }
+    },
+    "/spotify/add": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "category": {
+                  "example": "any"
+                },
+                "embedLink": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/spotify/categories": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/spotify/playlist": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "example": "any"
+                },
+                "page": {
+                  "example": "any"
+                },
+                "pageSize": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {}
       }
     }
   }

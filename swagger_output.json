@@ -274,6 +274,9 @@
                 "category": {
                   "example": "any"
                 },
+                "search": {
+                  "example": "any"
+                },
                 "page": {
                   "example": "any"
                 },

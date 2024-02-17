@@ -1,1 +1,2 @@
 {"date":"2024-02-16T20:40:36.975Z","level":"error","message":"data is not defined","method":"POST","service":"user-service","url":"/add"}
+{"date":"2024-02-17T11:33:02.842Z","level":"error","message":"Cast to Number failed for value \"any\" (type string) at path \"limit\"","method":"POST","service":"user-service","url":"/playlist"}

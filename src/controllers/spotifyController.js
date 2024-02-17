@@ -143,15 +143,19 @@ const fetchCategories = async (req, res) => {
 
 const getPlaylist = async (req, res) => {
   try {
-    const { page = 1, pageSize = 10, category } = req.body;
+    const { page = 1, pageSize = 10 } = req.body;
     const skipItems = (Number(page) - 1) * Number(pageSize);
 
     const caetegoryFilter = req.body.category
       ? { category: { $regex: req.body.category, $options: "i" } }
       : {};
+    const searchFilter = req.body.search
+      ? { title: { $regex: req.body.search, $options: "i" } }
+      : {};
     const playlistCount = await SpotifyPlaylist.countDocuments();
     const data = await SpotifyPlaylist.find({
       ...caetegoryFilter,
+      ...searchFilter,
     })
       .skip(skipItems)
       .limit(pageSize);
